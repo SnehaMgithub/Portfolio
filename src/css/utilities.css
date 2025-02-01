@@ -1,0 +1,180 @@
+/* ?This is where reusable styling of this template will be. 
+   !Will contain things like:
+   * Button styling
+   * Background color styling
+   * padding and margin
+*/
+
+.container {
+  max-width: var(--width-medium);
+  margin: 0 auto;
+  padding: 1rem 2rem;
+}
+
+h1::selection,
+h2::selection {
+  color: #111;
+  background: var(--primary-color);
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.9rem;
+  border-radius: 30px;
+  text-transform: uppercase;
+  font-size: 0.82rem;
+  transition: 0.3s;
+}
+
+.btn-primary {
+  background: var(--primary-color);
+  color: #000000;
+}
+
+.btn-secondary {
+  margin: 5px 0;
+  background-color: var(--bg-secondary);
+  color: var(--bg-primary);
+}
+
+/* add hover to resume button */
+.btn-primary:hover {
+  background: var(--secondary-color);
+}
+
+/* Dark mode toggle */
+#switch {
+  display: none;
+}
+
+.toggle-icons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.toggle-icons > img {
+  transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  width: 30px;
+}
+
+.moon {
+  transform: rotate(10deg);
+}
+
+#switch:checked + .toggle-icons .moon {
+  transform: rotate(250deg);
+}
+
+#switch:checked + .toggle-icons .sun {
+  transform: rotate(100deg);
+}
+
+/* Header Container */
+.header-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 8rem;
+  padding: 1rem;
+}
+
+.header-container > div {
+  margin-top: 1rem;
+}
+
+.content-text {
+  text-align: center;
+  margin: 1.5rem 0;
+}
+
+.content-text h2 {
+  font-size: 3rem;
+  line-height: 1.2;
+  transition: 0.2s ease-in-out;
+}
+
+.content-text p {
+  padding: 0.5rem;
+  margin: 0 auto;
+  max-width: 700px;
+}
+
+/* Project cards */
+.card {
+  padding: 1rem;
+  background: var(--card-background);
+  color: #ffffff;
+  border-radius: 5px;
+  transition: 0.4s ease-in-out;
+  cursor: pointer;
+  weight:100%;
+  height:100%;
+}
+
+.card a {
+  color: #ffffff;
+  transition: 0.25s ease-in-out;
+  font-size: 1.1rem;
+  margin-right: 0.3rem;
+  
+}
+
+.card a:hover {
+  color: var(--primary-color);
+}
+
+.card:hover {
+  box-shadow: inset 0 100px 1000px 10px rgba(0, 0, 0, 0.8);
+}
+
+.card:hover .project-info {
+  opacity: 1;
+}
+
+/* Project Images */
+
+/* project 1 */
+.card:nth-child(1) {
+  background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZZ-sUHPqbtmFH82G2YvTYHL0FCKGgBrD45rmhANaaFLz8u3k0RITWSyWvnzVBKL4JX90&usqp=CAU) center center/cover;
+}
+
+/* Project 2 */
+.card:nth-child(2) {
+  background: url(data:image/png;base64,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) center center/cover;
+}
+
+/* Project 3 */
+.card:nth-child(3) {
+  background: url(https://www.shutterstock.com/image-illustration/illustration-healthcare-technology-concepts-flat-600nw-1913714050.jpg) center center/cover;
+}
+
+/* Project 4 */
+.card:nth-child(4) {
+  background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSy6gCmgoDZkp_FF3K8LUDZFwPkONF9WstLdA&s) center center/cover;
+}
+
+/* Project 5 */
+.card:nth-child(5) {
+  background: url(../assets/project/project-five.png) center center/cover;
+}
+
+/* Project 6 */
+.card:nth-child(6) {
+  background: url(../assets/project/project-six.png) center center/cover;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .header-container {
+    margin-top: 7rem;
+    text-align: center;
+  }
+
+  .content-text h2 {
+    font-size: 2.5rem;
+  }
+}
