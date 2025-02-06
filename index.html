@@ -54,8 +54,8 @@
             <div class="theme-switch">
               <input type="checkbox" id="switch" />
               <label class="toggle-icons" for="switch">
-                <img class="moon" src="assets/moon.svg" />
-                <img class="sun" src="assets/sun.svg" />
+                <img class="moon" src="./src/assets/moon.svg" />
+                <img class="sun" src="./src/assets/sun.svg" />
               </label>
             </div>
             <!-- Hamburger menu -->
@@ -227,9 +227,9 @@
         <div class="social">
           
           <a href="https://www.linkedin.com/in/sneha-m-a762a81a3/" target="_blank"
-            ><img src="./assets/linkedin-icon.svg" alt="Linkedin"
+            ><img src="./src/assets/linkedin-icon.svg" alt="Linkedin"
           /></a>
-          <a href="https://github.com/SnehaMgithub" target="_blank"><img src="./assets/github-icon.svg" alt="GitHub" /></a>
+          <a href="https://github.com/SnehaMgithub" target="_blank"><img src="./src/assets/github-icon.svg" alt="GitHub" /></a>
          
         </div>
       </div>
@@ -252,9 +252,9 @@
           
        
           <a href="https://www.linkedin.com/in/sneha-m-a762a81a3/" target="_blank"
-            ><img src="./assets/linkedin-icon.svg" alt="Linkedin"
+            ><img src="./src/assets/linkedin-icon.svg" alt="Linkedin"
           /></a>
-          <a href="https://github.com/SnehaMgithub" target="_blank"><img src="./assets/github-icon.svg" alt="GitHub" /></a>
+          <a href="https://github.com/SnehaMgithub" target="_blank"><img src="./src/assets/github-icon.svg" alt="GitHub" /></a>
           
         </div>
         <!-- Attribution -->
@@ -310,4 +310,50 @@ function opentab(tabname) {
     document.getElementById(tabname).classList.add("active-tab");
 }
 
-</script>
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+  
+    function switchTheme(e) {
+      if (e.target.checked) {
+        document.documentElement.setAttribute("data-theme", "dark");
+        localStorage.setItem("theme", "dark");
+      } else {
+        document.documentElement.setAttribute("data-theme", "light");
+        localStorage.setItem("theme", "light");
+      }
+    }
+  
+    toggleSwitch.addEventListener("change", switchTheme, false);
+  
+    // Check LocalStorage and apply theme on load
+    const currentTheme = localStorage.getItem("theme") || "light";
+    document.documentElement.setAttribute("data-theme", currentTheme);
+  
+    if (currentTheme === "dark") {
+      toggleSwitch.checked = true;
+    }
+  });
+
+  const hamburger = document.querySelector(".hamburger");
+const navMenu = document.querySelector(".nav-menu");
+
+hamburger.addEventListener("click", mobileMenu);
+
+function mobileMenu() {
+  hamburger.classList.toggle("active");
+  navMenu.classList.toggle("active");
+}
+
+// Close navbar when link is clicked
+const navLink = document.querySelectorAll(".nav-link");
+
+navLink.forEach((n) => n.addEventListener("click", closeMenu));
+
+function closeMenu() {
+  hamburger.classList.remove("active");
+  navMenu.classList.remove("active");
+}
+
+  </script>
+  
