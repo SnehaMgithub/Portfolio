@@ -14,7 +14,6 @@
 
  
     <link rel="icon" type="image/x-icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKefGisNZwoWA5eRpcNmMESnPxnaTazJrPdw&s" />
-    <link rel="manifest" href="assets/favicon/site.webmanifest" />
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
@@ -44,7 +43,8 @@
               <a
                   class="nav-link btn btn-primary"
                   href="/src/assets/Sneha_Resume.pdf/Sneha_M_Fullstack.pdf"
-                  download="Sneha_Resume"
+                  target="_blank"
+                 rel="noopener noreferrer"
               >
                   RESUME <i class="fas fa-arrow-right"></i>
               </a>
@@ -149,9 +149,10 @@
       <article class="project">
         <!-- Project 1 -->
         <div href="" class="card">
+          <span class="card-title">Landing Page</span>
           <div class="project-info">
             <div class="project-bio">
-              <h3>Landing Page</h3>
+              <!-- <h3>Landing Page</h3> -->
               <p>HTML, Tailwind CSS</p>
             </div>
 
@@ -164,9 +165,9 @@
 
         <!-- Project 2 -->
         <div href="" class="card">
+          <span class="card-title">Email Clone</span>
           <div class="project-info">
             <div class="project-bio">
-              <h3>Email Clone</h3>
               <p>React, Redux, Node.Js, JavaScript, Tailwind CSS, HTML5, Firebase</p>
             </div>
 
@@ -179,9 +180,10 @@
 
         <!-- Porject 3 -->
         <div href="" class="card">
+          <span class="card-title">Hospital Appointment</span>
           <div class="project-info">
             <div class="project-bio">
-              <h3>Hospital Appointment</h3>
+            
               <p>HTML5, Tailwind CSS, NodeJS ,ExpressJS, JWT, Dotenv, Mongoose, Bcrypt, Nodemon ,React </p>
             </div>
 
@@ -196,6 +198,7 @@
 
         <!-- Project 4 -->
         <div href="" class="card">
+          <span class="card-title">Flight Booking App</span>
           <div class="project-info">
             <div class="project-bio">
               <h3>Flight Booking App</h3>
@@ -204,16 +207,17 @@
 
             <div class="project-link">
               <a href="https://github.com/SnehaMgithub/FlightBoooking-Frontend" target="_blank"><i class="fab fa-github"></i></a>
-              <a href="https://flight-boooking-frontend.vercel.app/register" target="_blank"><i class="fas fa-globe"></i></a>
+              <a href="https://flight-boooking-frontend.vercel.app/" target="_blank"><i class="fas fa-globe"></i></a>
             </div>
           </div>
         </div>
 
       </article>
 
-      <a href="#" class="btn btn-secondary"
-        target="_blank" >See More <i class="fas fa-arrow-right"></i
-      ></a>
+      <button class="btn btn-secondary"
+         id="see-more">See More <i class="fas fa-arrow-right"></i
+      ></button>
+
     </section>
 
     <!--contact-->
@@ -354,6 +358,46 @@ function closeMenu() {
   hamburger.classList.remove("active");
   navMenu.classList.remove("active");
 }
+
+document.getElementById("see-more").addEventListener("click",function(){
+  const project = document.querySelector(".project")
+  const newProject =`
+  <div href="" class="card">
+    <span class="card-title">Restaurant App</span>
+          <div class="project-info">
+            <div class="project-bio">
+            
+              <p>HTML5, CSS, NodeJS ,ExpressJS, CORS, Dotenv, Mongoose, Nodemon,Context API , Axios,React</p>
+            </div>
+
+            <div class="project-link">
+              <a href="https://github.com/SnehaMgithub/Restaurant-App-Frontend" target="_blank"><i class="fab fa-github"></i></a>
+              <a href="https://restaurant-app-frontend-rho.vercel.app/" target="_blank"><i class="fas fa-globe"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div href="" class="card">
+           <span class="card-title">Task Management</span>
+          <div class="project-info">
+            <div class="project-bio">
+             
+              <p>HTML5, Bootstrap, NodeJS ,ExpressJS, Dotenv, Mongoose, Nodemon , Axios, React</p>
+            </div>
+
+            <div class="project-link">
+              <a href="https://github.com/SnehaMgithub/Task-Management-frontend" target="_blank"><i class="fab fa-github"></i></a>
+              <a href="https://task-management-frontend-olive.vercel.app/" target="_blank"><i class="fas fa-globe"></i></a>
+            </div>
+          </div>
+        </div>
+`;
+if (project) {
+        project.insertAdjacentHTML("beforeend", newProject);
+        this.style.display = "none";
+    }
+
+});
 
   </script>
   
